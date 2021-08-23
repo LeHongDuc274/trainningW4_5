@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FirstTutorialFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp16"
+        android:src="@drawable/ic_tutorial_1"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.675" />
+
+    <Button
+        android:id="@+id/btn_skip_1"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp40"
+        android:layout_marginBottom="@dimen/dp5"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/skip"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_goneMarginEnd="@dimen/dp40" />
+
+    <TextView
+        android:id="@+id/tv_tutorial_1_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp48"
+        android:layout_marginTop="@dimen/dp30"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway_black"
+        android:lines="2"
+        android:text="@string/text_tutorial_1_1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp28"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/tv_tutorial_1_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/text_tutorial_1_2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_tutorial_1_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tutorial_1_1" />
+
+    <Button
+        android:id="@+id/btn_next_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp32"
+        android:background="@drawable/btn_shape_1"
+        android:fontFamily="@font/lato_black"
+        android:paddingHorizontal="@dimen/dp32"
+        android:paddingVertical="@dimen/dp16"
+        android:text="@string/next"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tutorial_1_2" />
+
+    <LinearLayout
+        android:id="@+id/ll_layout_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_next_1"
+        app:layout_constraintEnd_toStartOf="@+id/btn_next_1"
+        app:layout_constraintStart_toStartOf="@+id/tv_tutorial_1_1"
+        app:layout_constraintTop_toTopOf="@+id/btn_next_1">
+
+        <View
+            android:id="@+id/view_1_1"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp10"
+            android:background="@drawable/view_shape_cur_position_slide" />
+
+        <View
+            android:id="@+id/view_1_2"
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_marginStart="@dimen/dp10"
+            android:background="@drawable/view_shape_ring" />
+
+        <View
+            android:id="@+id/view_1_3"
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_marginStart="@dimen/dp10"
+            android:background="@drawable/view_shape_ring" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

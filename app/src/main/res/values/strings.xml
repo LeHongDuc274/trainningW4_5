@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">tradix</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip">skip</string>
+    <string name="text_tutorial_1_1">Start to invest\nfor your future!</string>
+    <string name="text_tutorial_1_2">Ex totam praesentium incidunt aut.</string>
+    <string name="next">Next</string>
+    <string name="text_tutorial_2_1">Follow our tips\nto achieve success!</string>
+    <string name="finish">Start</string>
+    <string name="text_tutorial_3_1">Keep your\ninvestment safe</string>
+    <string name="text_tutorial_3_2">Ex totam praesentium incidunt aut.</string>
 </resources>

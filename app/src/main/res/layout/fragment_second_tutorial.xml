@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SecondTutorialFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <ImageButton
+        android:id="@+id/btn_back_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1_2"
+        app:layout_constraintEnd_toStartOf="@+id/tv_tutorial_2_1"
+        app:layout_constraintTop_toTopOf="@+id/btn_skip_2" />
+
+    <Button
+        android:id="@+id/btn_skip_2"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp40"
+        android:layout_marginBottom="@dimen/dp5"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/skip"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp16"
+        android:src="@drawable/ic_tutorial_2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2_2" />
+
+    <TextView
+        android:id="@+id/tv_tutorial_2_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp48"
+        android:layout_marginTop="@dimen/dp32"
+        android:layout_marginBottom="@dimen/dp32"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway_black"
+        android:lines="2"
+        android:text="@string/text_tutorial_2_1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp28"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline1_2" />
+
+    <TextView
+        android:id="@+id/tv_tutorial_2_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/text_tutorial_1_2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toTopOf="@id/guideline2_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_tutorial_2_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tutorial_2_1" />
+
+    <Button
+        android:id="@+id/btn_next_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp32"
+        android:background="@drawable/btn_shape_1"
+        android:fontFamily="@font/lato_black"
+        android:paddingHorizontal="@dimen/dp32"
+        android:paddingVertical="@dimen/dp16"
+        android:text="@string/next"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline3_2" />
+
+    <LinearLayout
+        android:id="@+id/ll_layout_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_next_2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_next_2"
+        app:layout_constraintStart_toStartOf="@+id/tv_tutorial_2_1"
+        app:layout_constraintTop_toTopOf="@+id/btn_next_2">
+
+
+
+        <View
+            android:id="@+id/view_2_2"
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@drawable/view_shape_ring" />
+        <View
+            android:id="@+id/view_2_1"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp10"
+            android:background="@drawable/view_shape_cur_position_slide" />
+        <View
+            android:id="@+id/view_2_3"
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@drawable/view_shape_ring" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
