@@ -10,4 +10,16 @@
     <string name="finish">Start</string>
     <string name="text_tutorial_3_1">Keep your\ninvestment safe</string>
     <string name="text_tutorial_3_2">Ex totam praesentium incidunt aut.</string>
+    <string name="tradix">TRADIX</string>
+    <string name="the_future_of_trading">The future of trading</string>
+    <string name="welcome">Welcome!</string>
+    <string name="e_mail">E-mail</string>
+    <string name="pass">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="singup">Sing Up</string>
+    <string name="login">Login</string>
+    <string name="create">Create a free account</string>
+    <string name="send">We have sent you an\nemail to change your\npassword</string>
+    <string name="resend">Resend email</string>
+    <string name="time_cd">Wait 30 seconds before sending it</string>
 </resources>
