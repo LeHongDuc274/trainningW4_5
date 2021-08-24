@@ -1,5 +1,7 @@
 package com.example.tradix
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.tradix.activities.LoginActivity
 
 
 class SplashFragment : Fragment() {
@@ -27,10 +30,18 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
 
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_tutorialPagerFragment)
-        }, 2000L)
+            if(!tutorialFinished()) {
+                findNavController().navigate(R.id.action_splashFragment_to_tutorialPagerFragment)
+            } else {
+                val intent = Intent(activity,LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }, 1000L)
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
-
+     fun tutorialFinished(): Boolean{
+         val sharedReference = requireActivity().getSharedPreferences("tutorial", Context.MODE_PRIVATE)
+         return sharedReference.getBoolean("finish",false)
+     }
 
 }

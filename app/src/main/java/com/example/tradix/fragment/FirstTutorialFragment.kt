@@ -1,5 +1,6 @@
 package com.example.tradix.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tradix.R
+import com.example.tradix.activities.LoginActivity
 
 
 class FirstTutorialFragment : Fragment() {
@@ -24,6 +26,10 @@ class FirstTutorialFragment : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
         view.findViewById<Button>(R.id.btn_next_1).setOnClickListener {
             viewPager?.currentItem = 1
+        }
+        view.findViewById<Button>(R.id.btn_skip_1).setOnClickListener {
+            val intent = Intent(activity,LoginActivity::class.java)
+            startActivity(intent)
         }
         return view
     }

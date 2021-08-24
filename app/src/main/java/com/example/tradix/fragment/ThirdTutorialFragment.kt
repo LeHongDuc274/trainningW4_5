@@ -1,5 +1,7 @@
 package com.example.tradix.fragment
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tradix.R
+import com.example.tradix.activities.LoginActivity
 
 class ThirdTutorialFragment : Fragment() {
 
@@ -23,10 +26,24 @@ class ThirdTutorialFragment : Fragment() {
             viewPager?.currentItem?.minus(1)
         }
         view.findViewById<Button>(R.id.btn_next_3).setOnClickListener {
-            //navigation login
-
+            //navigation login and finished tutorial
+            tutorialFinished()
+            val intent = Intent(activity,LoginActivity::class.java)
+            startActivity(intent)
+        }
+        view.findViewById<Button>(R.id.btn_skip_3).setOnClickListener {
+            // skip tutorial
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
         }
         return view
+    }
+
+    private fun tutorialFinished() {
+        val sharedReference = requireActivity().getSharedPreferences("tutorial", Context.MODE_PRIVATE)
+        val editor = sharedReference.edit()
+        editor.putBoolean("finish",true)
+        editor.apply()
     }
 
 }
