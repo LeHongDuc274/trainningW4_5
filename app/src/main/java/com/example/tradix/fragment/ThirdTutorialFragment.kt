@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.navigation.PopUpToBuilder
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tradix.R
 import com.example.tradix.activities.LoginActivity
@@ -28,13 +30,15 @@ class ThirdTutorialFragment : Fragment() {
         view.findViewById<Button>(R.id.btn_next_3).setOnClickListener {
             //navigation login and finished tutorial
             tutorialFinished()
-            val intent = Intent(activity,LoginActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_tutorialPagerFragment_to_nav_login)
+//            val intent = Intent(activity,LoginActivity::class.java)
+//            startActivity(intent)
         }
         view.findViewById<Button>(R.id.btn_skip_3).setOnClickListener {
             // skip tutorial
-            val intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_tutorialPagerFragment_to_nav_login)
+//            val intent = Intent(activity, LoginActivity::class.java)
+//            startActivity(intent)
         }
         return view
     }

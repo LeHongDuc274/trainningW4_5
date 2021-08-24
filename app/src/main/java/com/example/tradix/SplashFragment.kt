@@ -30,11 +30,11 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
 
         Handler(Looper.getMainLooper()).postDelayed({
+            val navController = findNavController()
             if(!tutorialFinished()) {
-                findNavController().navigate(R.id.action_splashFragment_to_tutorialPagerFragment)
+                navController.navigate(R.id.action_splashFragment_to_tutorialPagerFragment)
             } else {
-                val intent = Intent(activity,LoginActivity::class.java)
-                startActivity(intent)
+                navController.navigate(R.id.action_splashFragment_to_nav_login)
             }
         }, 1000L)
         return inflater.inflate(R.layout.fragment_splash, container, false)

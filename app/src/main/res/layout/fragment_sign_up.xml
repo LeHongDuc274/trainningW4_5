@@ -159,7 +159,7 @@
         android:layout_marginTop="@dimen/dp16"
         android:layout_marginBottom="@dimen/dp16"
         android:background="@drawable/shape_edt"
-        android:fontFamily="@font/lato_light"
+        android:fontFamily="@font/lato_black"
         android:text="@string/singup"
         android:textSize="@dimen/sp22"
         app:layout_constraintEnd_toEndOf="@+id/idt_password_signup"

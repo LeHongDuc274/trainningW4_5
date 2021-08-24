@@ -12,11 +12,25 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_tutorialPagerFragment"
-            app:destination="@id/tutorialPagerFragment" />
+            app:destination="@id/tutorialPagerFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_nav_login"
+            app:destination="@id/nav_login"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/tutorialPagerFragment"
         android:name="com.example.tradix.viewpager.TutorialPagerFragment"
         android:label="fragment_tutorial_pager"
-        tools:layout="@layout/fragment_tutorial_pager" />
+        tools:layout="@layout/fragment_tutorial_pager" >
+        <action
+            android:id="@+id/action_tutorialPagerFragment_to_nav_login"
+            app:destination="@id/nav_login"
+            app:popUpTo="@id/tutorialPagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/nav_login" />
 </navigation>
