@@ -22,4 +22,6 @@
     <string name="send">We have sent you an\nemail to change your\npassword</string>
     <string name="resend">Resend email</string>
     <string name="time_cd">Wait 5 seconds before sending it</string>
+    <string name="password_change">Yay! Your password has been\nchanged!</string>
+    <string name="tv_confirm_change_2">You can now log into your account\nwith the new password</string>
 </resources>

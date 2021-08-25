@@ -15,4 +15,6 @@
     <dimen name="sp22">22sp</dimen>
     <dimen name="dp70">70dp</dimen>
     <dimen name="dp24">24dp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp20">20sp</dimen>
 </resources>

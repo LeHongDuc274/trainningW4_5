@@ -1,5 +1,6 @@
 package com.example.tradix.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.tradix.R
+import com.example.tradix.activities.HomeActivity
 import org.w3c.dom.Text
 import kotlin.properties.Delegates
 
@@ -38,6 +40,13 @@ class LoginFragment : Fragment() {
         }
         view.findViewById<TextView>(R.id.tv_login_5_singup).setOnClickListener {
             navController.navigate(R.id.action_loginFragment_to_signUpFragment)
+        }
+        view.findViewById<Button>(R.id.btn_login).setOnClickListener {
+            navController.navigate(R.id.action_loginFragment_to_nav_home)
+//            val intent = Intent(activity,HomeActivity::class.java)
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//            startActivity(intent)
         }
     }
 
