@@ -34,7 +34,10 @@ class SplashFragment : Fragment() {
             if(!tutorialFinished()) {
                 navController.navigate(R.id.action_splashFragment_to_tutorialPagerFragment)
             } else {
-                navController.navigate(R.id.action_splashFragment_to_nav_login)
+                val intent =  Intent(activity,LoginActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
         }, 1000L)
         return inflater.inflate(R.layout.fragment_splash, container, false)

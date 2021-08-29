@@ -30,15 +30,17 @@ class ThirdTutorialFragment : Fragment() {
         view.findViewById<Button>(R.id.btn_next_3).setOnClickListener {
             //navigation login and finished tutorial
             tutorialFinished()
-            findNavController().navigate(R.id.action_tutorialPagerFragment_to_nav_login)
-//            val intent = Intent(activity,LoginActivity::class.java)
-//            startActivity(intent)
+            val intent =  Intent(activity,LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
         view.findViewById<Button>(R.id.btn_skip_3).setOnClickListener {
             // skip tutorial
-            findNavController().navigate(R.id.action_tutorialPagerFragment_to_nav_login)
-//            val intent = Intent(activity, LoginActivity::class.java)
-//            startActivity(intent)
+            val intent =  Intent(activity,LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
         return view
     }

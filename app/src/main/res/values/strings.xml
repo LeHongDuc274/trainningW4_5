@@ -24,4 +24,12 @@
     <string name="time_cd">Wait 5 seconds before sending it</string>
     <string name="password_change">Yay! Your password has been\nchanged!</string>
     <string name="tv_confirm_change_2">You can now log into your account\nwith the new password</string>
+    <string name="home">home</string>
+    <string name="coins">coins</string>
+    <string name="news">news</string>
+    <string name="menu">menu</string>
+    <string name="index">Index</string>
+    <string name="shares">shares</string>
+    <string name="currencies" >currencies</string>
+    <string name="futures">FUTURES</string>
 </resources>

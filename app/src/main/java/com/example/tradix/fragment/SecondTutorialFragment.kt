@@ -30,9 +30,10 @@ class SecondTutorialFragment : Fragment() {
             viewPager?.currentItem = 0
         }
         view.findViewById<Button>(R.id.btn_skip_2).setOnClickListener {
-//            val intent = Intent(activity, LoginActivity::class.java)
-//            startActivity(intent)
-            findNavController().navigate(R.id.action_tutorialPagerFragment_to_nav_login)
+            val intent =  Intent(activity,LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
 
         }
         return view

@@ -12,4 +12,14 @@
     <color name="black_2">#171717</color>
     <color name="color1">#656565</color>
     <color name="color2">#9d9d9d</color>
+    <color name="fuchsia">#f21cc8</color>
+    <color name="white_two">#f8f8f8</color>
+    <color name="brownish_grey">#676767</color>
+    <color name="greyish_brown">#4d4d4d</color>
+    <color name="black_six">#020202</color>
+    <color name="greenish_cyan">#2bfeba</color>
+    <color name="black_nine">#1d1d1d</color>
+    <color name="pinkish_grey">#bcbcbc</color>
+    <color name="black_four">#222222</color>
+    <color name="aqua">#0cf2b4</color>
 </resources>

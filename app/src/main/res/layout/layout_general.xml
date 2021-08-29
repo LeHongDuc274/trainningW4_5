@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="4">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv_general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_weight="1"
+        android:fontFamily="@font/raleway_medium"
+        android:text="General"
+
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:gravity="center"
+        android:background="@drawable/shape_list"
+        android:id="@+id/tv_technical_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_weight="1"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Technical Section"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_markets"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_weight="1"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Markets"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_charts"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_weight="1"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Charts"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12" />
+</LinearLayout>

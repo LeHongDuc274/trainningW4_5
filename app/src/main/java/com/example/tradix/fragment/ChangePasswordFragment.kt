@@ -25,7 +25,9 @@ class ChangePasswordFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_change_password, container, false)
         handler = Handler(Looper.getMainLooper())
+
         thread = Thread(runable)
+        if (!thread.isInterrupted) thread.interrupt()
         thread.start()
         view.findViewById<Button>(R.id.btn_resend_mail).isEnabled = false
         view.findViewById<Button>(R.id.btn_resend_mail).setOnClickListener {

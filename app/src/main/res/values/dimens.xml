@@ -17,4 +17,8 @@
     <dimen name="dp24">24dp</dimen>
     <dimen name="sp24">24sp</dimen>
     <dimen name="sp20">20sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="dp12">12dp</dimen>
+    <dimen name="dp8">8dp</dimen>
 </resources>
