@@ -18,6 +18,7 @@
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/ic_tutorial_1.xml" value="0.13645833333333332" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/ic_tutorial_2.xml" value="0.215625" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/shape_3.xml" value="0.20833333333333334" />
+        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/shape_corner_8dp.xml" value="0.215625" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/shape_edt.xml" value="0.215625" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/shape_list.xml" value="0.215625" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/drawable/shape_ll_layout.xml" value="0.13645833333333332" />
@@ -31,12 +32,13 @@
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_change_password.xml" value="0.22" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_coin.xml" value="0.25" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_confirm_password.xml" value="0.22" />
+        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_editorial.xml" value="0.25" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_first_tutorial.xml" value="0.25" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_index.xml" value="0.10885416666666667" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_menu.xml" value="0.19947916666666668" />
-        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_new.xml" value="0.19947916666666668" />
+        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_new.xml" value="0.2" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_second_tutorial.xml" value="0.25" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_sign_up.xml" value="0.19947916666666668" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_splash.xml" value="0.19947916666666668" />
@@ -44,8 +46,10 @@
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/fragment_tutorial_pager.xml" value="0.19947916666666668" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/item_index.xml" value="0.25" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/item_neo_chart.xml" value="0.19947916666666668" />
-        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/layout_general.xml" value="0.33" />
+        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/item_new.xml" value="0.67" />
+        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/layout_general.xml" value="0.25" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/layout_rv_index.xml" value="0.1203125" />
+        <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/layout_tab_new.xml" value="0.33" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/layout/list_fragment_of_home.xml" value="0.5" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/menu/menu_coin_fragment.xml" value="0.19947916666666668" />
         <entry key="..\:/Trainning/W4_5/trainningW4_5/app/src/main/res/menu/navigation_menu.xml" value="0.19947916666666668" />

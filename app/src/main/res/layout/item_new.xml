@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/shape_corner_8dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp32">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_item_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_item_new" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_item_new_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp24"
+        android:layout_marginTop="@dimen/dp12"
+        android:fontFamily="@font/raleway_regular"
+        android:text="ALT -3,87%"
+        android:textColor="@color/color_red"
+        android:textSize="@dimen/sp10"
+        app:layout_constraintStart_toEndOf="@+id/cardView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_item_new_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lato_light"
+        android:text="3 Sept 2020"
+        android:textColor="@color/black_eleven"
+        android:textSize="@dimen/sp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_new_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_item_new_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/raleway_black"
+        android:text="ATLANTIA"
+        android:textColor="@color/black_twelve"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintEnd_toEndOf="@+id/tv_item_new_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_new_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_new_1" />
+
+    <TextView
+        android:id="@+id/tv_item_new_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp48"
+        android:ellipsize="end"
+        android:fontFamily="@font/lato_light"
+        android:maxLines="3"
+        android:text="@string/text_disc"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_new_3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_new_3" />
+
+    <ImageButton
+        android:id="@+id/btn_item_new_goto"
+        android:layout_width="@dimen/dp24"
+        android:layout_height="@dimen/dp24"
+        android:src="@drawable/ic_goto"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_new_4"
+        app:tint="@color/black"
+        android:backgroundTint="@color/white_three"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

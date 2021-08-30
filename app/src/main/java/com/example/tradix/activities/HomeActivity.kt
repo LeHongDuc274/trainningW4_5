@@ -43,23 +43,27 @@ class HomeActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
-
-
+    
     override fun onBackPressed() {
-//        val navController = findNavController(R.id.fragmentContainerView3)
-//        if (navController.currentDestination?.id == R.id.homeFragment) {
-//            showDialog()
-//        } else super.onBackPressed()
-        val backstackCount = supportFragmentManager.backStackEntryCount
-//       val id = supportFragmentManager.getBackStackEntryAt(backstackCount).id
-        if (backstackCount == 0) {
-            showDialog()
-        } else {
-            super.onBackPressed()
 
+        val backstackCount = supportFragmentManager.backStackEntryCount
+        val child = supportFragmentManager.findFragmentById(R.id.fragmentContainerView3)?.childFragmentManager
+        Log.e("child.count","${child?.backStackEntryCount}")
+        if (child != null) {
+            if (child.backStackEntryCount > 0) {
+                child.popBackStack()
+                return
+            }
+        } else {
+            if (backstackCount == 0) {
+                showDialog()
+            } else {
+                super.onBackPressed()
+
+            }
         }
-//        Log.e("backstackCount", "count = $backstackCount + name : $id")
     }
+
 
     private fun showDialog() {
         val dialog = AlertDialog.Builder(this)

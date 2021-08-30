@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp8">
+
+    <TextView
+        android:id="@+id/tv_general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:background="@drawable/shape_list"
+        android:backgroundTint="#00ffba"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:padding="@dimen/dp4"
+        android:text="EDITORIAL"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_technical_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:padding="@dimen/dp4"
+        android:text="RAW MATERIAL"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_markets"
+        app:layout_constraintStart_toEndOf="@+id/tv_markets"
+        app:layout_constraintTop_toTopOf="@+id/tv_markets" />
+
+    <TextView
+        android:id="@+id/tv_markets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:padding="@dimen/dp4"
+        android:text="CRYPTO NEWS"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_general"
+        app:layout_constraintStart_toEndOf="@+id/tv_general"
+        app:layout_constraintTop_toTopOf="@id/tv_general" />
+
+    <TextView
+        android:id="@+id/tv_charts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp8"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:padding="@dimen/dp4"
+        android:text="ECONOMICS"
+        android:textColor="@color/black_four"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_technical_section"
+        app:layout_constraintStart_toEndOf="@+id/tv_technical_section"
+        app:layout_constraintTop_toTopOf="@+id/tv_technical_section" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,4 +22,9 @@
     <color name="pinkish_grey">#bcbcbc</color>
     <color name="black_four">#222222</color>
     <color name="aqua">#0cf2b4</color>
+    <color name="color_red">#f00909</color>
+    <color name="black_eleven">#080808</color>
+    <color name="black_twelve">#2e2e2e</color>
+    <color name="white_three">#ffffff</color>
+    <color name="black_thirteen">#0a0909</color>
 </resources>
