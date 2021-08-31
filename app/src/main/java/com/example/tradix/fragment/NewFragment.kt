@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,15 +26,25 @@ class NewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_new, container, false)
+        view.findViewById<ImageButton>(R.id.ib_back).setOnClickListener {
+            val child = childFragmentManager
+            if (child != null && child.backStackEntryCount > 0) {
+                child.popBackStack()
+                view.findViewById<TextView>(R.id.tv_in_new_toolbar).text = "NEWS"
+            } else {
+                parentFragmentManager.popBackStack()
+            }
+        }
         val newAdapter = NewAdapter(requireContext())
         newAdapter.apply {
             listNewItem = listItem
             setClick {
                 Toast.makeText(activity, "click item new $it", Toast.LENGTH_SHORT).show()
-                    childFragmentManager.beginTransaction()
-                        .add(R.id.fragment_holder, EditorialFragment())
-                        .addToBackStack(null)
-                        .commit()
+                childFragmentManager.beginTransaction()
+                    .add(R.id.fragment_holder, EditorialFragment())
+                    .addToBackStack(null)
+                    .commit()
+                view.findViewById<TextView>(R.id.tv_in_new_toolbar).text = "EDITORIAL NEWS"
             }
         }
 
@@ -46,6 +58,9 @@ class NewFragment : Fragment() {
         return view
     }
 
+    fun setname(){
+        view?.findViewById<TextView>(R.id.tv_in_new_toolbar)?.text = "NEWS"
+    }
 //    override fun onAttach(context: Context) {
 //        super.onAttach(context)
 //        val backCallback = object : OnBackPressedCallback(true) {
@@ -67,11 +82,35 @@ class NewFragment : Fragment() {
 
     val listItem = mutableListOf<NewItem>(
         NewItem(R.drawable.ic_item_new, "ALT -3%", "3 Sept 2020", "ALANTIA", R.string.text_disc),
-        NewItem(R.drawable.ic_item_new_2, "HKD -2,13%", "2 Sept 2020", "XIAOMI", R.string.text_disc),
-        NewItem(R.drawable.ic_item_new_3, "AAPL -0,91%", "1 Sept 2020", "APPlE", R.string.text_disc),
+        NewItem(
+            R.drawable.ic_item_new_2,
+            "HKD -2,13%",
+            "2 Sept 2020",
+            "XIAOMI",
+            R.string.text_disc
+        ),
+        NewItem(
+            R.drawable.ic_item_new_3,
+            "AAPL -0,91%",
+            "1 Sept 2020",
+            "APPlE",
+            R.string.text_disc
+        ),
         NewItem(R.drawable.ic_item_new, "ALT -387%", "3 Sept 2022", "ALANTIA", R.string.text_disc),
-        NewItem(R.drawable.ic_item_new_2, "ALT -387%", "3 Sept 2023", "ALANTIA", R.string.text_disc),
-        NewItem(R.drawable.ic_item_new_3, "ALT -387%", "3 Sept 2024", "ALANTIA", R.string.text_disc),
+        NewItem(
+            R.drawable.ic_item_new_2,
+            "ALT -387%",
+            "3 Sept 2023",
+            "ALANTIA",
+            R.string.text_disc
+        ),
+        NewItem(
+            R.drawable.ic_item_new_3,
+            "ALT -387%",
+            "3 Sept 2024",
+            "ALANTIA",
+            R.string.text_disc
+        ),
         NewItem(R.drawable.ic_item_new_2, "ALT -387%", "3 Sept 2025", "ALANTIA", R.string.text_disc)
     )
 }

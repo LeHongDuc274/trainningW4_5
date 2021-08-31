@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,11 +19,12 @@ import com.example.tradix.model.Model1
 import kotlin.random.Random
 
 
-class HomeFragment : Fragment(),View.OnClickListener {
+class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,42 +36,47 @@ class HomeFragment : Fragment(),View.OnClickListener {
         val adapter = ListIndexAdapter()
         adapter.list = mutableList
         adapter.setClick {
-            Toast.makeText(activity,it.toString(),Toast.LENGTH_LONG).show()
+             val title = mutableList[it].text1
+            Toast.makeText(activity, it.toString(), Toast.LENGTH_LONG).show()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView3, CoinFragment(title))
+                .addToBackStack(null)
+                .commit()
         }
         val recyclerView = view.findViewById<RecyclerView>(R.id.rv_index);
         recyclerView.setHasFixedSize(true);
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = adapter
-            return view
+        return view
     }
 
-    private fun fabAction(view:View) {
+    private fun fabAction(view: View) {
         view.findViewById<View>(R.id.fab).setOnClickListener {
-            var random :Int  = Random.nextInt(100000,999999)
+            var random: Int = Random.nextInt(100000, 999999)
             it.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#${random}"))
 
         }
     }
 
     val mutableList = mutableListOf<Model1>(
-        Model1("Down Jone1", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone2", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone3", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone4", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone5", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone6", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone7", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone8", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone9", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone10", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone11", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone12", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone13", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone14", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone15", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone16", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone17", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
-        Model1("Down Jone18", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45")
+        Model1("Down fffff Jone 1", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 2", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 3", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 4", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 5", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 6", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 7", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 8", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 9", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 10", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 11", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 12", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 13", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 14", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 15", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 16", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 17", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
+        Model1("Down Jone 18", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45")
     )
 
     override fun onClick(v: View?) {

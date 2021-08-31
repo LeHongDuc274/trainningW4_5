@@ -3,6 +3,7 @@ package com.example.tradix.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -28,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
         navBottom.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeFragment -> loadFragment(HomeFragment())
-                R.id.coinFragment -> loadFragment(CoinFragment())
+                R.id.coinFragment -> loadFragment(CoinFragment("NEO"))
                 R.id.newFragment -> loadFragment(NewFragment())
                 R.id.menuFragment -> loadFragment(MenuFragment())
                 else -> Unit
@@ -43,23 +44,22 @@ class HomeActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
-    
+
     override fun onBackPressed() {
 
         val backstackCount = supportFragmentManager.backStackEntryCount
-        val child = supportFragmentManager.findFragmentById(R.id.fragmentContainerView3)?.childFragmentManager
-        Log.e("child.count","${child?.backStackEntryCount}")
-        if (child != null) {
-            if (child.backStackEntryCount > 0) {
-                child.popBackStack()
-                return
-            }
+        val child =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView3)?.childFragmentManager
+        Log.e("child.count", "${child?.backStackEntryCount}")
+        if (child != null && child.backStackEntryCount > 0) {
+            if(child.popBackStackImmediate()) findViewById<TextView>(R.id.tv_in_new_toolbar).text = "NEWS"
+            
+            return
         } else {
             if (backstackCount == 0) {
                 showDialog()
             } else {
                 super.onBackPressed()
-
             }
         }
     }
