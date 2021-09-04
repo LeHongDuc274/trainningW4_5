@@ -10,15 +10,17 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tradix.R
 import com.example.tradix.adapter.NewAdapter
 import com.example.tradix.adapter.NewItem
+import com.example.tradix.listItemNews
 
 
 class NewFragment : Fragment() {
-
+    lateinit var newAdapter: NewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,90 +29,32 @@ class NewFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_new, container, false)
         view.findViewById<ImageButton>(R.id.ib_back).setOnClickListener {
-            val child = childFragmentManager
-            if (child != null && child.backStackEntryCount > 0) {
-                child.popBackStack()
-                view.findViewById<TextView>(R.id.tv_in_new_toolbar).text = "NEWS"
-            } else {
-                parentFragmentManager.popBackStack()
-            }
+            findNavController().navigateUp()
         }
-        val newAdapter = NewAdapter(requireContext())
-        newAdapter.apply {
-            listNewItem = listItem
-            setClick {
-                Toast.makeText(activity, "click item new $it", Toast.LENGTH_SHORT).show()
-                childFragmentManager.beginTransaction()
-                    .add(R.id.fragment_holder, EditorialFragment())
-                    .addToBackStack(null)
-                    .commit()
-                view.findViewById<TextView>(R.id.tv_in_new_toolbar).text = "EDITORIAL NEWS"
-            }
-        }
+        initAdapter()
+        setupRecycleView(view)
 
-
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_news)
-        recyclerView.apply {
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(view.context)
-            adapter = newAdapter
-        }
         return view
     }
 
-    fun setname(){
-        view?.findViewById<TextView>(R.id.tv_in_new_toolbar)?.text = "NEWS"
+
+    private fun initAdapter() {
+        newAdapter = NewAdapter(requireContext())
+        newAdapter.apply {
+            listNewItem = listItemNews
+            setClick {
+                Toast.makeText(activity, "click item new $it", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.editorialFragment)
+            }
+        }
     }
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        val backCallback = object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//                // Remove all fragments from the childFragmentManager,
-//                // but exclude the first added child fragment.
-//                // This child fragment will be deleted with its parent.
-//                if (childFragmentManager.backStackEntryCount > 1) {
-//                    childFragmentManager.popBackStack()
-//                    return
-//                }
-//                // Delete parent fragment
-//                parentFragmentManager.popBackStack()
-//            }
-//        }
-//        requireActivity().onBackPressedDispatcher.addCallback(this, backCallback)
-//    }
 
-
-    val listItem = mutableListOf<NewItem>(
-        NewItem(R.drawable.ic_item_new, "ALT -3%", "3 Sept 2020", "ALANTIA", R.string.text_disc),
-        NewItem(
-            R.drawable.ic_item_new_2,
-            "HKD -2,13%",
-            "2 Sept 2020",
-            "XIAOMI",
-            R.string.text_disc
-        ),
-        NewItem(
-            R.drawable.ic_item_new_3,
-            "AAPL -0,91%",
-            "1 Sept 2020",
-            "APPlE",
-            R.string.text_disc
-        ),
-        NewItem(R.drawable.ic_item_new, "ALT -387%", "3 Sept 2022", "ALANTIA", R.string.text_disc),
-        NewItem(
-            R.drawable.ic_item_new_2,
-            "ALT -387%",
-            "3 Sept 2023",
-            "ALANTIA",
-            R.string.text_disc
-        ),
-        NewItem(
-            R.drawable.ic_item_new_3,
-            "ALT -387%",
-            "3 Sept 2024",
-            "ALANTIA",
-            R.string.text_disc
-        ),
-        NewItem(R.drawable.ic_item_new_2, "ALT -387%", "3 Sept 2025", "ALANTIA", R.string.text_disc)
-    )
+    private fun setupRecycleView(view:View) {
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_news)
+        recyclerView?.let {
+            it.setHasFixedSize(true)
+            it.layoutManager = LinearLayoutManager(view.context)
+            it.adapter = newAdapter
+        }
+    }
 }

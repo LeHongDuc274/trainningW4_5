@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -18,52 +20,42 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
     lateinit var navBottom: BottomNavigationView
+    lateinit var navHostFragment: NavHostFragment
+    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
         supportActionBar?.hide()
-//        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.fragmentContainerView3) as NavHostFragment
-//        val navController = navHostFragment.navController
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView3) as NavHostFragment
+        navController = navHostFragment.navController
         navBottom = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        navBottom.setupWithNavController(navController)
         navBottom.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.homeFragment -> loadFragment(HomeFragment())
-                R.id.coinFragment -> loadFragment(CoinFragment("NEO"))
-                R.id.newFragment -> loadFragment(NewFragment())
-                R.id.menuFragment -> loadFragment(MenuFragment())
+                R.id.homeFragment -> navController.navigate(item.itemId, null)
+                R.id.newFragment -> navController.navigate(item.itemId, null)
+                R.id.menuFragment -> navController.navigate(item.itemId, null)
                 else -> Unit
             }
             true
         }
     }
 
-    private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView3, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
     override fun onBackPressed() {
 
-        val backstackCount = supportFragmentManager.backStackEntryCount
-        val child =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView3)?.childFragmentManager
-        Log.e("child.count", "${child?.backStackEntryCount}")
-        if (child != null && child.backStackEntryCount > 0) {
-            if(child.popBackStackImmediate()) findViewById<TextView>(R.id.tv_in_new_toolbar).text = "NEWS"
-            
-            return
+//        val backstackCount = navHostFragment.parentFragmentManager.backStackEntryCount
+        val child = navHostFragment.childFragmentManager
+        val backstackChildCount = child.backStackEntryCount
+        Log.e("child.count", "${backstackChildCount}")
+        if (backstackChildCount == 0) {
+            showDialog()
         } else {
-            if (backstackCount == 0) {
-                showDialog()
-            } else {
-                super.onBackPressed()
-            }
+            navController.navigateUp()
         }
     }
-
 
     private fun showDialog() {
         val dialog = AlertDialog.Builder(this)

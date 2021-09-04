@@ -7,6 +7,51 @@
     android:background="@color/white_two"
     tools:context=".fragment.EditorialFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_new_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:background="@drawable/componente_6_1"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginStart="@dimen/dp8"
+                android:backgroundTint="@color/white_two"
+                android:src="@drawable/icons_8_expand_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_in_new_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/raleway_black"
+                android:text="EDITORIAL NEWS"
+                android:textColor="@color/black_nine"
+                android:textSize="@dimen/sp28"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ib_back"
+                app:layout_constraintStart_toEndOf="@+id/ib_back"
+                app:layout_constraintTop_toTopOf="@+id/ib_back" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -17,7 +62,7 @@
         android:src="@drawable/raggruppa_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_new_toolbar" />
 
     <TextView
         android:id="@+id/tv_edit_new_1"

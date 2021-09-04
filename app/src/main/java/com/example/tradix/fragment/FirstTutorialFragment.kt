@@ -28,7 +28,6 @@ class FirstTutorialFragment : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
         view.findViewById<Button>(R.id.btn_next_1).setOnClickListener {
             viewPager?.currentItem = 1
-
         }
         view.findViewById<Button>(R.id.btn_skip_1).setOnClickListener {
             val intent =  Intent(activity,LoginActivity::class.java)

@@ -34,6 +34,7 @@
                 android:ellipsize="middle"
                 android:fontFamily="@font/raleway_black"
                 android:gravity="left"
+                android:singleLine="true"
                 android:text="NEO INDEX"
                 android:textColor="@color/black_nine"
                 android:textSize="@dimen/sp28"
@@ -41,8 +42,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/ib_back"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ib_back"
-                app:layout_constraintTop_toTopOf="@+id/ib_back"
-                android:singleLine="true" />
+                app:layout_constraintTop_toTopOf="@+id/ib_back" />
 
             <ImageButton
                 android:id="@+id/ib_back"
@@ -238,15 +238,19 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp12"
             android:layout_marginTop="16dp"
+            android:gravity="center"
             android:background="@drawable/shape_tv_chart_title"
             android:fontFamily="@font/raleway_regular"
             android:paddingHorizontal="@dimen/dp10"
             android:paddingVertical="5dp"
             android:text="NEO chart"
+            android:ellipsize="middle"
+            android:singleLine="true"
             android:textColor="@color/black_four"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ib_next"
+            app:layout_constraintStart_toEndOf="@+id/ib_pre"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton

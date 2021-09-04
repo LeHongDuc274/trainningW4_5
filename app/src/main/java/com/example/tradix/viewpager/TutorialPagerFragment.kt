@@ -28,9 +28,9 @@ class TutorialPagerFragment : Fragment() {
             ThirdTutorialFragment()
         )
         val adapter =
-            TutorialPagerAdapter(requireActivity().supportFragmentManager, lifecycle, listFragment)
+            TutorialPagerAdapter(childFragmentManager, lifecycle, listFragment)
+            // k su dung requireActivity().supportFragmentManager -> childFragmentManager
         view.findViewById<ViewPager2>(R.id.viewPager).adapter = adapter
-
         return view
     }
 }

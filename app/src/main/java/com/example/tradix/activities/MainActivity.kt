@@ -1,11 +1,12 @@
-package com.example.tradix
+package com.example.tradix.activities
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import com.example.tradix.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,10 +17,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = findNavController(R.id.fragmentContainerView)
-        if (navController.currentDestination?.id == R.id.tutorialPagerFragment){
-            showDialog()
-        } else super.onBackPressed()
+
+        showDialog()
+
     }
 
     private fun showDialog() {
