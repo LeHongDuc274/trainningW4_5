@@ -46,6 +46,23 @@ class CoinFragment : Fragment() {
                 }
             }
         )
+
+        view.findViewById<ImageButton>(R.id.ib_pre).setOnClickListener {
+            val position = viewPager.currentItem
+            if (position >= 1) {
+                viewPager.currentItem = position - 1
+                val chartName: String = title + " chart ${position}"
+                textView2.text = chartName
+            }
+        }
+        view.findViewById<ImageButton>(R.id.ib_next).setOnClickListener {
+            val position = viewPager.currentItem
+            if (position <= 2) {
+                viewPager.currentItem = position + 1
+                val chartName: String = title + " chart ${position + 2}"
+                textView2.text = chartName
+            }
+        }
     }
 
     private fun setupToolBar(view: View) {
