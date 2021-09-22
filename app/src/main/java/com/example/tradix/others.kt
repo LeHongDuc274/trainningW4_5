@@ -27,14 +27,10 @@ val firstListCoin = mutableListOf<Model1?>(
     null
 )
 val listUsers = mutableMapOf(
-    "name1" to "pass",
-    "name2" to "pass",
-    "name3" to "pass",
-    "name4" to "pass",
-    "name5" to "pass",
-    "name6" to "pass",
-    "name7" to "pass",
-    "name8" to "pass"
+    "email" to "pass",
+    "email2" to "pass",
+    "email3" to "pass",
+
 )
 val listItemMenu = mutableListOf<ItemMenu>(
     ItemMenu(R.drawable.icons_8_alarm, "Alerts", VIEW_TYPE_ITEM_2),

@@ -55,11 +55,12 @@ class HomeFragment : Fragment() {
         shareViewmodel.listCoin.value?.let { adapter.setData(it) }
         adapter.setClick {
             val title = shareViewmodel.listCoin.value?.get(it)?.text1
+            shareViewmodel._curCoinOpenned.value = it
             val args = bundleOf(
                 "title" to title
             )
             val coinFragment = CoinFragment()
-            coinFragment.arguments = args
+           // coinFragment.arguments = args
             findNavController().navigate(R.id.coinFragment, args)
 
         }

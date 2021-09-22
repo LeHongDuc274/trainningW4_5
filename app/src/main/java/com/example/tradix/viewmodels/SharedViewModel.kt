@@ -7,12 +7,13 @@ import com.example.tradix.*
 import com.example.tradix.model.Model1
 
 class SharedViewModel : ViewModel() {
-
-
     private val _listCoin: MutableLiveData<MutableList<Model1?>> = MutableLiveData(
         firstListCoin
     )
     val listCoin: LiveData<MutableList<Model1?>> = _listCoin
+
+    val _curCoinOpenned = MutableLiveData<Int>(0)
+    val curCoinOpenned : LiveData<Int> = _curCoinOpenned
 
     fun loadMoreDataListCoin() {
         val nullIndex = _listCoin.value?.size?.minus(1)
@@ -36,7 +37,7 @@ class SharedViewModel : ViewModel() {
         _listCoin.value?.add(null)
     }
 
-    fun removeItem(position: Int){
+    fun removeItem(position: Int) {
         _listCoin.value?.removeAt(position)
     }
 }
