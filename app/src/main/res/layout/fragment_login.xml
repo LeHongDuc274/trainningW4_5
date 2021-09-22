@@ -135,23 +135,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl_login_2" />
-
-    <EditText
-        android:id="@+id/idt_password"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/ll_password"
+        app:passwordToggleEnabled="true"
         android:layout_marginHorizontal="@dimen/dp70"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/dp16"
         android:layout_marginBottom="@dimen/dp16"
-        android:background="@drawable/shape_edt"
-        android:hint="@string/pass"
-        android:textColor="@color/black"
-        android:textColorHint="@color/color2"
-        android:textSize="@dimen/sp22"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idt_email" />
-
+        app:layout_constraintTop_toBottomOf="@+id/idt_email"
+        >
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/idt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edt"
+            android:hint="@string/pass"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color2"
+            android:textSize="@dimen/sp22"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    
     <Button
         android:id="@+id/btn_login"
         android:layout_width="0dp"
@@ -162,10 +170,10 @@
         android:fontFamily="@font/lato_black"
         android:text="@string/login"
         android:textSize="@dimen/sp22"
-        app:layout_constraintEnd_toEndOf="@+id/idt_password"
+        app:layout_constraintEnd_toEndOf="@+id/ll_password"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/idt_password"
-        app:layout_constraintTop_toBottomOf="@+id/idt_password" />
+        app:layout_constraintStart_toStartOf="@+id/ll_password"
+        app:layout_constraintTop_toBottomOf="@+id/ll_password" />
 
     <TextView
         android:id="@+id/tv_login_4_forgot_pass"
