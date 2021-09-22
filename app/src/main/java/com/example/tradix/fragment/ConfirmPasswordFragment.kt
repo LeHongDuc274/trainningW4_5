@@ -11,6 +11,7 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.tradix.R
+import com.example.tradix.listUsers
 import com.example.tradix.viewmodels.LoginShareViewmodel
 import java.util.concurrent.atomic.AtomicReference
 
@@ -34,6 +35,10 @@ class ConfirmPasswordFragment : Fragment() {
 //                )
 //            )
             viewmodel.setPassWord("123")
+            var email = viewmodel.textEmail.value
+            if (email != null) {
+                listUsers.put(email,"123")
+            }
             findNavController().popBackStack(R.id.loginFragment,false)
         }
         return view

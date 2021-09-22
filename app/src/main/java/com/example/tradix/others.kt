@@ -7,6 +7,12 @@ import com.example.tradix.model.Model1
 const val VIEW_TYPE_HEADER_1 = 1
 const val VIEW_TYPE_ITEM_1 = 2
 const val VIEW_TYPE_ITEM_2 = 3
+
+const val EMAIL_ALREADY_EXITS = 1
+const val EMAIL_NOT_EXITS = 2
+const val PASSWORD_WRONG = 3
+const val PASSWORD_SUCCES = 4
+
 val firstListCoin = mutableListOf<Model1?>(
     Model1("Down fffff Jone 1 ", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
     Model1("Down fffff Jone 2", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
@@ -19,6 +25,16 @@ val firstListCoin = mutableListOf<Model1?>(
     Model1("Down fffff Jone 9", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
     Model1("Down fffff Jone 10", "20.047,50", "+203 (+1,04%)", "NYSE", "10:44:45"),
     null
+)
+val listUsers = mutableMapOf(
+    "name1" to "pass",
+    "name2" to "pass",
+    "name3" to "pass",
+    "name4" to "pass",
+    "name5" to "pass",
+    "name6" to "pass",
+    "name7" to "pass",
+    "name8" to "pass"
 )
 val listItemMenu = mutableListOf<ItemMenu>(
     ItemMenu(R.drawable.icons_8_alarm, "Alerts", VIEW_TYPE_ITEM_2),
