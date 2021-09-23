@@ -17,12 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        val navController = findNavController(R.id.fragmentContainerView)
-
         showDialog()
-
     }
 
     private fun showDialog() {

@@ -69,7 +69,8 @@ class CoinFragment : Fragment() {
         view.findViewById<Toolbar>(R.id.coint_toolbar).inflateMenu(R.menu.menu_coin_fragment)
         //pop
         view.findViewById<ImageButton>(R.id.ib_back).setOnClickListener {
-            parentFragmentManager.popBackStack()
+            //parentFragmentManager.popBackStack()
+            findNavController().navigateUp()
         }
         //set toolbar title
         title = arguments?.getString("title").toString()
