@@ -40,7 +40,7 @@ class CoinFragment : Fragment() {
             object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
-                    Toast.makeText(activity, "$position", Toast.LENGTH_SHORT).show()
+                  //  Toast.makeText(activity, "$position", Toast.LENGTH_SHORT).show()
                     val chartName: String = title + " chart ${position + 1}"
                     textView2.text = chartName
                 }
