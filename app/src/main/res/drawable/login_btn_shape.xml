@@ -8,9 +8,9 @@
         android:right="@dimen/dp24"
         android:top="@dimen/dp10"
         />
-    <gradient android:angle="120"
+    <gradient android:angle="90"
         android:type="linear"
-        android:startColor="@color/blue_purple"
-        android:endColor="@color/pink_purple"
+        android:startColor="@color/pink_purple"
+        android:endColor="@color/blue_purple"
         />
 </shape>
