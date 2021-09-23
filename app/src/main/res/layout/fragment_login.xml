@@ -120,44 +120,58 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_login_2"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/idt_email"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email_signin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dp70"
         android:layout_marginTop="@dimen/dp20"
         android:layout_marginBottom="@dimen/dp16"
-        android:background="@drawable/shape_edt"
-        android:hint="@string/e_mail"
-        android:textColor="@color/black"
-        android:textColorHint="@color/color2"
-        android:textSize="@dimen/sp22"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gl_login_2" />
+        app:layout_constraintTop_toTopOf="@+id/gl_login_2">
+
+        <EditText
+            android:id="@+id/idt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/shape_edt"
+            android:hint="@string/e_mail"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color2"
+            android:textSize="@dimen/sp22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ll_password"
-        app:passwordToggleEnabled="true"
         android:layout_marginHorizontal="@dimen/dp70"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/dp16"
         android:layout_marginBottom="@dimen/dp16"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idt_email"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/til_email_signin"
+        app:passwordToggleEnabled="true">
+
         <EditText
-            android:inputType="textPassword"
             android:id="@+id/idt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_edt"
             android:hint="@string/pass"
+            android:inputType="textPassword"
             android:textColor="@color/black"
             android:textColorHint="@color/color2"
-            android:textSize="@dimen/sp22"
-            />
+            android:textSize="@dimen/sp22" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -166,10 +180,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp16"
         android:layout_marginBottom="@dimen/dp16"
-        android:background="@drawable/shape_edt"
+        android:background="@drawable/login_btn_shape"
         android:fontFamily="@font/lato_black"
         android:text="@string/login"
         android:textSize="@dimen/sp22"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/ll_password"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ll_password"
@@ -191,6 +206,7 @@
         app:layout_constraintStart_toStartOf="@+id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/tv_login_5_singup"
         android:layout_width="wrap_content"

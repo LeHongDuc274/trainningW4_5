@@ -120,45 +120,59 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_signup_2"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/idt_email_signup"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dp70"
         android:layout_marginTop="@dimen/dp20"
         android:layout_marginBottom="@dimen/dp16"
-        android:background="@drawable/shape_edt"
-        android:hint="@string/e_mail"
-        android:textColor="@color/black"
-        android:textColorHint="@color/color2"
-        android:textSize="@dimen/sp22"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gl_signup_2" />
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/ll_pass"
-    app:passwordToggleEnabled="true"
-    android:layout_marginHorizontal="@dimen/dp70"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_marginTop="@dimen/dp16"
-    android:layout_marginBottom="@dimen/dp16"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/idt_email_signup"
-    >
-    <EditText
-        android:inputType="textPassword"
-        android:id="@+id/idt_password_signup"
-        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="@+id/gl_signup_2">
+
+        <EditText
+            android:id="@+id/idt_email_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edt"
+            android:hint="@string/e_mail"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color2"
+            android:textSize="@dimen/sp22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_pass"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_edt"
-        android:hint="@string/pass"
-        android:textColor="@color/black"
-        android:textColorHint="@color/color2"
-        android:textSize="@dimen/sp22"
-        />
-</com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginHorizontal="@dimen/dp70"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp16"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_email_signup"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/idt_password_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edt"
+            android:hint="@string/pass"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color2"
+            android:textSize="@dimen/sp22" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
@@ -167,10 +181,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp16"
         android:layout_marginBottom="@dimen/dp16"
-        android:background="@drawable/shape_edt"
+        android:background="@drawable/login_btn_shape"
         android:fontFamily="@font/lato_black"
         android:text="@string/singup"
         android:textSize="@dimen/sp22"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/ll_pass"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ll_pass"

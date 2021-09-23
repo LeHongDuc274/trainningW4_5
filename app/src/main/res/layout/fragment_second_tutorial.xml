@@ -103,12 +103,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp32"
-        android:background="@drawable/btn_shape_1"
+        android:background="@drawable/login_btn_shape"
         android:fontFamily="@font/lato_black"
         android:paddingHorizontal="@dimen/dp32"
         android:paddingVertical="@dimen/dp16"
         android:text="@string/next"
         android:textSize="@dimen/sp14"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline3_2" />
@@ -124,7 +125,6 @@
         app:layout_constraintTop_toTopOf="@+id/btn_next_2">
 
 
-
         <View
             android:id="@+id/view_2_2"
             android:layout_width="@dimen/dp10"
@@ -132,11 +132,13 @@
             android:layout_marginStart="@dimen/dp10"
             android:layout_marginEnd="@dimen/dp10"
             android:background="@drawable/view_shape_ring" />
+
         <View
             android:id="@+id/view_2_1"
             android:layout_width="@dimen/dp40"
             android:layout_height="@dimen/dp10"
             android:background="@drawable/view_shape_cur_position_slide" />
+
         <View
             android:id="@+id/view_2_3"
             android:layout_width="@dimen/dp10"
